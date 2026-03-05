@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import profile from "./assets/P1.jpg";
+
 
 import {
   FaGithub,
@@ -99,7 +99,7 @@ function App() {
           </div>
 
           <div className="hero-image">
-            <img src="./assets\p1.jpg" alt="Developer"/>
+           
           </div>
         </div>
       </section>
