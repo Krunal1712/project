@@ -489,3 +489,32 @@ button {
   0% { transform: translateY(0px); }
   100% { transform: translateY(-6px); }
 }
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.footer{
+text-align:center;
+padding:40px;
+border-top:1px solid rgba(255,255,255,0.05);
+color:#94a3b8;
+}
+
+.footer-social{
+margin-top:15px;
+display:flex;
+justify-content:center;
+gap:20px;
+font-size:20px;
+}
+
+.footer-social a{
+color:white;
+}
+
+.footer-social a:hover{
+color:#14b8a6;
+}

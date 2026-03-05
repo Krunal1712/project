@@ -4,8 +4,7 @@ import CountUp from "react-countup";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-
-
+import profile from "/src/assets/P1.jpg";
 import {
   FaGithub,
   FaLinkedin,
@@ -15,7 +14,9 @@ import {
   FaTools
 } from "react-icons/fa";
 
+
 function App() {
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -47,29 +48,35 @@ function App() {
 
       {/* NAVBAR */}
       <nav className="navbar">
+
         <div className="logo">Krunal.dev</div>
 
         <div className="nav-links">
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
-          <a href="#Skills">Skills</a>
         </div>
 
         <div className="social-icons">
-          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
+          <a href="https://github.com/" target="_blank" rel="noreferrer">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer">
+
+          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
             <FaLinkedin />
           </a>
         </div>
+
       </nav>
 
       {/* HERO */}
       <section id="home" className="hero">
+
         <div className="hero-content">
+
           <div className="hero-text">
+
             <h1>
               I build{" "}
               <span>
@@ -96,12 +103,15 @@ function App() {
               <button className="primary">View Work</button>
               <button className="secondary">Download Resume</button>
             </div>
+
           </div>
 
           <div className="hero-image">
-           
+            <img src={profile} alt="Developer" />
           </div>
+
         </div>
+
       </section>
 
       {/* STATS */}
@@ -113,6 +123,7 @@ function App() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
+
         <div className="stat">
           <h2><CountUp end={10} duration={3} />+</h2>
           <p>Projects Completed</p>
@@ -127,6 +138,7 @@ function App() {
           <h2><CountUp end={15} duration={3} />+</h2>
           <p>Technologies Used</p>
         </div>
+
       </motion.section>
 
       {/* PROJECTS */}
@@ -139,149 +151,101 @@ function App() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
+
         <h2>Featured Work</h2>
 
-        <div className="project-card">
-          <h3>Smart Traffic System</h3>
-          <p>
-            IoT-based traffic optimization system using Python,
-            OpenCV and real-time image processing.
-          </p>
+        <div className="project-grid">
+
+          <motion.div className="project-card" whileHover={{ scale: 1.05 }}>
+            <h3>Smart Traffic System</h3>
+
+            <p>
+              IoT-based traffic optimization system using Python,
+              OpenCV and real-time image processing.
+            </p>
+          </motion.div>
+
+          <motion.div className="project-card" whileHover={{ scale: 1.05 }}>
+            <h3>Online Library Platform</h3>
+
+            <p>
+              Full-stack web application with authentication,
+              Node.js backend and scalable architecture.
+            </p>
+          </motion.div>
+
         </div>
 
-        <div className="project-card">
-          <h3>Online Library Platform</h3>
-          <p>
-            Full-stack web app with JWT authentication and scalable Node.js backend.
-          </p>
-        </div>
       </motion.section>
 
       {/* SKILLS */}
-      
-      
-       <section className="Skill">
-        
-        <div className="stat">
-          <h2><CountUp end={10} duration={3} />+</h2>
-          <p>Projects Completed</p>
-        </div>
-
-        <div className="stat">
-          <h2><CountUp end={3} duration={3} />+</h2>
-          <p>Years Learning</p>
-        </div>
-
-        <div className="stat">
-          <h2><CountUp end={15} duration={3} />+</h2>
-          <p>Technologies Used</p>
-        </div>
-      </section>
-
-      {/* TECH INFRASTRUCTURE */}
-      <motion.section
-        id="Skills"
-        className="tech Infrastructure"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      ></motion.section>
-      
-      <section id="skills" className="tech-section container">
+      <section id="skills" className="tech-section">
 
         <h2 className="tech-title">Tech Infrastructure</h2>
+
         <p className="tech-subtitle">
-          A specialized stack focused on performance, scalability, and solving real-world challenges.
+          A specialized stack focused on performance, scalability,
+          and solving real-world challenges.
         </p>
 
         <div className="tech-grid">
 
-          {/* Frontend */}
-          <motion.div
-            className="tech-card"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="tech-card">
             <div className="tech-header">
               <div className="tech-icon"><FaCode /></div>
               <h3>Frontend</h3>
             </div>
 
             <div className="tech-tags">
-              {["React", "Next.js", "HTML/CSS", "Tailwind CSS", "Framer Motion"].map((item, i) => (
-                <span key={i}>{item}</span>
-              ))}
+              <span>React</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Backend */}
-          <motion.div
-            className="tech-card"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div className="tech-card">
             <div className="tech-header">
               <div className="tech-icon"><FaServer /></div>
               <h3>Backend</h3>
             </div>
 
             <div className="tech-tags">
-              {["Node.js", "Express", "REST APIs", "JWT", "Authentication"].map((item, i) => (
-                <span key={i}>{item}</span>
-              ))}
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>REST API</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Databases */}
-          <motion.div
-            className="tech-card"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div className="tech-card">
             <div className="tech-header">
               <div className="tech-icon"><FaDatabase /></div>
-              <h3>Databases</h3>
+              <h3>Database</h3>
             </div>
 
             <div className="tech-tags">
-              {["PostgreSQL", "MySQL", "MongoDB", "Oracle SQL"].map((item, i) => (
-                <span key={i}>{item}</span>
-              ))}
+              <span>MySQL</span>
+              <span>MongoDB</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Tools */}
-          <motion.div
-            className="tech-card"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div className="tech-card">
             <div className="tech-header">
               <div className="tech-icon"><FaTools /></div>
-              <h3>Tools & Systems</h3>
+              <h3>Tools</h3>
             </div>
 
             <div className="tech-tags">
-              {["Git & GitHub", "Docker", "Vercel", "Linux", "Postman"].map((item, i) => (
-                <span key={i}>{item}</span>
-              ))}
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Vercel</span>
             </div>
-          </motion.div>
+          </div>
 
         </div>
+
       </section>
 
-      
       {/* CONTACT */}
       <motion.section
         id="contact"
@@ -292,15 +256,57 @@ function App() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
+
         <h2>Contact Me</h2>
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">
-          <input type="text" name="user_name" placeholder="Your Name" required />
-          <input type="email" name="user_email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit" className="primary">Send Message</button>
+
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+          />
+
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+          />
+
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          />
+
+          <button type="submit" className="primary">
+            Send Message
+          </button>
+
         </form>
+
       </motion.section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+
+        <p>© 2026 Krunal Prajapati</p>
+
+        <div className="footer-social">
+
+          <a href="#">
+            <FaGithub />
+          </a>
+
+          <a href="#">
+            <FaLinkedin />
+          </a>
+
+        </div>
+
+      </footer>
 
     </div>
   );
