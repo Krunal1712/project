@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import profile from "/src/assets/P1.jpg";
+import { useEffect } from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -16,6 +17,22 @@ import {
 
 
 function App() {
+  useEffect(() => {
+  const scrollBar = document.querySelector(".scroll-bar");
+
+  const handleScroll = () => {
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const scrolled =
+      (window.scrollY / height) * 100;
+
+    scrollBar.style.width = scrolled + "%";
+  };
+
+  window.addEventListener("scroll", handleScroll);
+}, []);
 
   const form = useRef();
 
@@ -54,6 +71,8 @@ function App() {
         <div className="nav-links">
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
@@ -69,6 +88,7 @@ function App() {
         </div>
 
       </nav>
+     
 
       {/* HERO */}
       <section id="home" className="hero">
@@ -106,40 +126,15 @@ function App() {
 
           </div>
 
-          <div className="hero-image">
-            <img src={profile} alt="Developer" />
-          </div>
+          
 
         </div>
 
       </section>
+      <div className="scroll-bar"></div>
+    
 
-      {/* STATS */}
-      <motion.section
-        className="stats"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-
-        <div className="stat">
-          <h2><CountUp end={10} duration={3} />+</h2>
-          <p>Projects Completed</p>
-        </div>
-
-        <div className="stat">
-          <h2><CountUp end={3} duration={3} />+</h2>
-          <p>Years Learning</p>
-        </div>
-
-        <div className="stat">
-          <h2><CountUp end={15} duration={3} />+</h2>
-          <p>Technologies Used</p>
-        </div>
-
-      </motion.section>
+    
 
       {/* PROJECTS */}
       <motion.section
@@ -177,6 +172,71 @@ function App() {
         </div>
 
       </motion.section>
+{/* ABOUT */}
+<section id="about" className="about-section">
+  <div className="container about-grid">
+
+    <div className="about-text">
+      <h2>About Me</h2>
+      <p>I recently completed a full stack Development course and i am currently in my third year of BSC CA & IT at sardar Patel University</p>
+      <p>
+        I'm a passionate <span>Full Stack Developer</span> focused on building
+        scalable web applications and real-world software solutions.
+      </p>
+
+      <p>
+        I specialize in modern technologies like React, Node.js, and databases
+        to create high-performance applications with clean architecture.
+      </p>
+
+      <p>
+        My goal is to build products that solve real problems and deliver
+        great user experiences.
+      </p>
+    </div>
+
+  <div className="hero-image">
+            <img src={profile} alt="Developer" />
+    </div>
+
+  </div>
+</section>
+       {/* EDUCATION */}
+<motion.section
+  id="education"
+  className="education container"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+>
+  <h2>Education</h2>
+
+  <div className="education-grid">
+
+    <div className="education-card">
+      <h3>Bachelor of Science (CA & IT)</h3>
+      <p className="edu-college">Sardar Patel University</p>
+      <p className="edu-year">2023 - Present</p>
+      <p>
+        Studied Computer Applications and Information Technology,
+        focusing on programming, databases, and software development.
+      </p>
+    </div>
+
+    <div className="education-card">
+      <h3>Full Stack Development</h3>
+      <p className="edu-college">Self Learning & Online Courses</p>
+      <p className="edu-year">INTERNSHIP</p>
+      <p>
+        Learning modern web development technologies including
+        React, Node.js, Express, and MongoDB.
+      </p>
+    </div>
+
+  </div>
+
+</motion.section>
 
       {/* SKILLS */}
       <section id="skills" className="tech-section">
