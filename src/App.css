@@ -84,20 +84,20 @@ section {
   color: #14b8a6;
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
+.social-icons{
+display:flex;
+gap:15px;
+font-size:20px;
 }
 
-.social-icons a {
-  color: white;
-  transition: 0.3s;
+.social-icons a{
+color:white;
+transition:0.3s;
 }
 
-.social-icons a:hover {
-  color: #14b8a6;
-  transform: scale(1.2);
+.social-icons a:hover{
+color:#14b8a6;
+transform:scale(1.2);
 }
 
 /* ========================= */
@@ -632,4 +632,7 @@ button {
   width:320px;
   border-radius:20px;
   box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}.edu-icon{
+font-size:40px;
+color:#14b8a6;
 }

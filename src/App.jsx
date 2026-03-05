@@ -6,9 +6,10 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import profile from "/src/assets/P1.jpg";
 import { useEffect } from "react";
+import { FaGraduationCap } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import {
-  FaGithub,
-  FaLinkedin,
   FaCode,
   FaServer,
   FaDatabase,
@@ -77,17 +78,44 @@ function App() {
           <a href="#contact">Contact</a>
         </div>
 
-        <div className="social-icons">
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
-            <FaGithub />
-          </a>
+       <div className="social-icons">
 
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-            <FaLinkedin />
-          </a>
-        </div>
+<a 
+href="https://github.com/Krunal1712"
+target="_blank"
+rel="noreferrer"
+>
+<FaGithub/>
+</a>
+
+<a 
+href="https://www.linkedin.com/in/krunal-prajapati-049781300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+target="_blank"
+rel="noreferrer"
+>
+<FaLinkedin/>
+</a>
+
+<a 
+href="https://www.instagram.com/krunal._.1712?igsh=c204Z3RzZ3I5aHJo"
+target="_blank"
+rel="noreferrer"
+>
+<FaInstagram/>
+</a>
+
+<a 
+href="krunal17122005@gmail.com"
+>
+<MdEmail/>
+</a>
+
+</div>
 
       </nav>
+      <center> <div className="hero-image">
+            <img src={profile} alt="Developer" />
+            </div></center>
      
 
       {/* HERO */}
@@ -123,19 +151,10 @@ function App() {
               <button className="primary">View Work</button>
               <button className="secondary">Download Resume</button>
             </div>
-
           </div>
-
-          
-
         </div>
-
       </section>
       <div className="scroll-bar"></div>
-    
-
-    
-
       {/* PROJECTS */}
       <motion.section
         id="projects"
@@ -146,7 +165,6 @@ function App() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-
         <h2>Featured Work</h2>
 
         <div className="project-grid">
@@ -170,6 +188,37 @@ function App() {
           </motion.div>
 
         </div>
+        <motion.div
+  className="project-card"
+  whileHover={{ scale: 1.05 }}
+>
+  <h3>Appointment Booking System</h3>
+
+  <p>
+    Full stack web application that allows users to book appointments
+    online with real-time availability, authentication, and database storage.
+  </p>
+
+  <div className="project-buttons">
+
+    <a
+      href="https://krunal1712.github.io/krunalproject/"
+      target="_blank"
+      rel="noreferrer"
+    >
+      GitHub
+    </a>
+
+    <a
+      href="https://your-live-demo-link.com"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Live Demo
+    </a>
+
+  </div>
+</motion.div>
 
       </motion.section>
 {/* ABOUT */}
@@ -210,7 +259,10 @@ function App() {
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
 >
-  <h2>Education</h2>
+  <div className="edu-icon">
+<FaGraduationCap />
+</div><h2>Education</h2>
+
 
   <div className="education-grid">
 
