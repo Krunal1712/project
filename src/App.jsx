@@ -3,7 +3,7 @@ import { ReactTyped } from "react-typed";
 import emailjs from "@emailjs/browser";
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import profile from "/src/assets/P1.jpg";
+import profile from "./assets/P1.jpg";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
